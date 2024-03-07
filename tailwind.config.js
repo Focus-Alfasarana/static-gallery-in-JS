@@ -4,7 +4,13 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "welcome-jumbotron": "url('images/jumbotron-t-shirts.webp')",
+        "welcome-jumbotron-alfasarana":
+            "url('images/jumbotron-t-shirts-alfasarana.webp')",
+      },
+    },
   },
   plugins: [],
 }
