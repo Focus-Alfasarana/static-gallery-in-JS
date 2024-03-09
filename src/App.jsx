@@ -171,15 +171,12 @@ function Footer() {
 
 function ShowMap() {
   return (
-    <div class="flex items-center justify-center h-96 my-6 rounded bg-gray-50 dark:bg-gray-800">
+    <div class="flex items-center justify-center h-96 rounded bg-gray-50 dark:bg-gray-800">
       <iframe
-        class="w-full h-full"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3856.9140817946327!2d112.78185423499214!3d-7.330155590058073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7facfc197b455%3A0xe727cb16c6667a4a!2sAlfasarana%20Produsen%20Tas%20Kain%20%7C%20Goodiebag%20%7C%20Goody%20bag%20%7C%20Tas%20Spunbond%20%7C%20Tas%20Kemasan!5e0!3m2!1sid!2sid!4v1706174368270!5m2!1sid!2sid"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
+        className="block h-full w-full"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.245894963414!2d112.78414807441045!3d-7.32625487204826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7facfc197b455%3A0xe727cb16c6667a4a!2sAlfasarana%20Produsen%20Tas%20Spunbond%20%7C%20Goodiebag%20%7C%20Goody%20bag%20%7C%20Tas%20Kain%20%7C%20Tas%20Kemasan!5e0!3m2!1sid!2sid!4v1709956358507!5m2!1sid!2sid"
+        allowFullScreen=""
+        referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
   );
@@ -256,6 +253,216 @@ function MainTitleH2({ title }) {
   );
 }
 
+function MainGallery() {
+  return (
+    <>
+      <div class="flex items-center justify-center my-6 rounded bg-gray-50 dark:bg-gray-800">
+        <img
+          class="rounded-md"
+          src="./public/images/banner-toko.webp"
+          alt="Banner CV Focus Alfasarana"
+        />
+      </div>
+      <div class="flex flex-col space-y-2 sm:grid grid-cols-2 gap-4 mb-4">
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/front-office.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/sewing-div.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/activity-1.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/activity-1.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+function MainList() {
+  return (
+    <ul class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 text-left text-gray-500 dark:text-gray-400">
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>Melayani pesanan partai (massal) maupun indi (satuan).</span>
+      </li>
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>
+          Berpengalaman lama dibidang konveksi kaos didukung Tenaga dan SDM yang
+          handal.
+        </span>
+      </li>
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>Harga yang kompetitif. </span>
+      </li>
+    </ul>
+  );
+}
+
+function ShowList({ listItem }) {
+  return (
+    <ul class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 text-left text-gray-500 dark:text-gray-400">
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>Melayani pesanan partai (massal) maupun indi (satuan).</span>
+      </li>
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>
+          Berpengalaman lama dibidang konveksi kaos didukung Tenaga dan SDM yang
+          handal.
+        </span>
+      </li>
+      <li class="flex flex-col items-center space-x-3 px-4 py-2 text-center rtl:space-x-reverse">
+        <svg
+          class="w-10 h-10 mb-2 text-green-500 dark:text-pink-600"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <span>Harga yang kompetitif. </span>
+      </li>
+    </ul>
+  );
+}
+
+function MainImages() {
+  return (
+    <>
+      <div class="flex items-center justify-center my-6 rounded bg-gray-50 dark:bg-gray-800">
+        <img
+          class="rounded-md"
+          src="./public/images/banner-toko.webp"
+          alt="Banner CV Focus Alfasarana"
+        />
+      </div>
+      <div class="flex flex-col space-y-2 sm:grid grid-cols-2 gap-4 mb-4">
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/front-office.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/sewing-div.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/activity-1.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+        <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
+          <img
+            class="rounded-md"
+            src="./public/images/activity-1.webp"
+            alt="Banner CV Focus Alfasarana"
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
 function SectionContent({ title, useCard = false, useMap = false }) {
   let cardList;
   let mapComp;
@@ -267,14 +474,15 @@ function SectionContent({ title, useCard = false, useMap = false }) {
   if (useMap) {
     mapComp = <ShowMap />;
   }
+  
 
   return (
     <div class="py-2 px-4 mx-auto text-center lg:py-4">
       <MainTitleH2 title={title} />
 
-      <div class="pb-4 mx-auto text-center space-y-10 lg:py-8">
-        {useCard ? cardList : ""}
-        {useMap ? mapComp : ""}
+      <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+        <>{useCard ? cardList : ""}</>
+        <>{useMap ? mapComp : ""}</>
       </div>
     </div>
   );
@@ -290,20 +498,17 @@ function MainContent({ name, useCard = false, useMap = false }) {
 
 export default function App() {
   return (
-    <>
+    <div className="bg-gray-900">
       <NavBar navLinks={Links} />
       <Hero />
-      {/*
-        MainSection
-          MainTitleH2
-          MainContent
-            CardLists
-              CardItem
-                CardLinks
-       */}
-      <MainContent name={"Produk Kami"} useCard={true} />
-      {/* <MainContent name={"Mengapa Kami?"} useMap={true} /> */}
+      
+      <section id="product-us" class="pt-20 dark:bg-gray-900">
+        <SectionContent title={"Produk Kami"} useCard={true} />
+        <SectionContent title={"Toko Kami"} useMap={true} />
+        <SectionContent title={"Mengapa Kami"} />
+      </section>
+
       <Footer />
-    </>
+    </div>
   );
 }
