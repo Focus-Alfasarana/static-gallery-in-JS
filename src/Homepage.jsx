@@ -226,10 +226,12 @@ function ListItem({ value }) {
     );
 }
 
-function CompanyAdvantagesList({ item }) {
+function CompanyAdvantagesList() {
     return (
         <ul class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 text-left text-gray-500 dark:text-gray-400">
-            <listItem item={item} />
+            {CompanyAdvantages.map((companyAdvantage) => (
+                <listItem value={companyAdvantage} />
+            ))}
         </ul>
     );
 }
@@ -396,52 +398,84 @@ function CompanyWorkHour() {
     );
 }
 
-function CompanyProfile() {
-    return (
-        <>
-            <MainTitleH2 title={"Tentang Kami"} />
-            <ul class="mb-6 md:mb-0 flex flex-col gap-8 justify-evenly">
-                <CompanyAddrs />
-                <CompanyContact />
-                <CompanyWorkHour />
-            </ul>
-        </>
-    );
-}
-
-function SectionContent({ title, useCard = false, useMap = false }) {
-    let cardList;
-    let mapComp;
-
-    if (useCard) {
-        cardList = MainCards.map((card) => (
-            <CardItem key={card.id} card={card} />
-        ));
-    }
-
-    if (useMap) {
-        mapComp = <ShowGoogleMap />;
-    }
-
+function SectionAboutCompany() {
     return (
         <div class="py-2 px-4 mx-auto text-center lg:py-4">
-            <MainTitleH2 title={title} />
+            <MainTitleH2 title={"Alamat Kami"} />
 
-            <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
-                <>{useCard ? cardList : ""}</>
-                <>{useMap ? mapComp : ""}</>
+            <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-8">
+                <ul class="mb-6 md:mb-0 flex flex-col gap-8 justify-evenly">
+                    <CompanyAddrs />
+                    <CompanyContact />
+                    <CompanyWorkHour />
+                </ul>
             </div>
         </div>
     );
 }
 
-function MainContent({ name, useCard = false, useMap = false }) {
+function SectionCompanyContact() {
     return (
-        <section id="product-us" class="pt-20 dark:bg-gray-900">
-            <SectionContent title={name} useCard={useCard} useMap={useMap} />
-        </section>
+        <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+            <CompanyContact />
+        </div>
     );
 }
+
+function SectionCompanyProfile() {
+    return (
+        <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+            <CompanyWork />
+        </div>
+    );
+}
+
+function AboutCompany() {
+    return (
+        <>
+            <MainTitleH2 title={"Tentang Kami"} />
+            <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+                <CompanyAdvantagesList />
+                <SectionCompanyProfile />
+                <SectionAboutCompany />
+            </div>
+        </>
+    );
+}
+
+// function SectionContent({ title, useCard = false, useMap = false }) {
+//     let cardList;
+//     let mapComp;
+
+//     if (useCard) {
+//         cardList = MainCards.map((card) => (
+//             <CardItem key={card.id} card={card} />
+//         ));
+//     }
+
+//     if (useMap) {
+//         mapComp = <ShowGoogleMap />;
+//     }
+
+//     return (
+//         <div class="py-2 px-4 mx-auto text-center lg:py-4">
+//             <MainTitleH2 title={title} />
+
+//             <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+//                 <>{useCard ? cardList : ""}</>
+//                 <>{useMap ? mapComp : ""}</>
+//             </div>
+//         </div>
+//     );
+// }
+
+// function MainContent({ name, useCard = false, useMap = false }) {
+//     return (
+//         <section id="product-us" class="pt-20 dark:bg-gray-900">
+//             <SectionContent title={name} useCard={useCard} useMap={useMap} />
+//         </section>
+//     );
+// }
 
 export default function Homepage() {
     return (
@@ -449,11 +483,15 @@ export default function Homepage() {
             <NavBar navLinks={Links} />
             <Hero />
 
-            <section id="product-us" class="pt-20 dark:bg-gray-900">
+            {/* <section id="product-us" class="pt-20 dark:bg-gray-900">
                 <CompanyAdvantagesList />
                 <CompanyWorkImgs />
                 <CompanyProfile />
-            </section>
+            </section> */}
+
+            <div class="py-2 px-4 mx-auto text-center lg:py-4">
+                <AboutCompany />
+            </div>
 
             <Footer />
         </div>
