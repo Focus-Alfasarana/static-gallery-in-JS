@@ -73,7 +73,7 @@ const CompanyAdvantages = [
         description:
             "Berpengalaman lama dibidang konveksi kaos didukung Tenaga dan SDM yang handal.",
     },
-    { id: "A3", description: "Harga yang kompetitif. ." },
+    { id: "A3", description: "Harga yang kompetitif." },
 ];
 
 function ShowGoogleMap() {
@@ -86,6 +86,27 @@ function ShowGoogleMap() {
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
         </div>
+    );
+}
+
+function CompanyMap() {
+    return (
+        <section id="our-map" class="pt-20 py dark:bg-gray-900">
+            <div class="py-2 px-4 mx-auto text-center lg:py-4">
+                <MainTitleH2 title={"Temukan Kami di Peta"} />
+                <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
+                    <ShowGoogleMap />
+                </div>
+            </div>
+        </section>
+    );
+}
+
+function MainTitleH2({ title }) {
+    return (
+        <h2 class="mb-8 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white uppercase">
+            {title}
+        </h2>
     );
 }
 
@@ -152,55 +173,18 @@ function CardItem({ card }) {
     );
 }
 
-function MainTitleH2({ title }) {
+function CompanyProduct({ card }) {
     return (
-        <h2 class="mb-8 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white uppercase">
-            {title}
-        </h2>
-    );
-}
-
-function MainGallery() {
-    return (
-        <>
-            <div class="flex items-center justify-center my-6 rounded bg-gray-50 dark:bg-gray-800">
-                <img
-                    class="rounded-md"
-                    src="./public/images/banner-toko.webp"
-                    alt="Banner CV Focus Alfasarana"
-                />
-            </div>
-            <div class="flex flex-col space-y-2 sm:grid grid-cols-2 gap-4 mb-4">
-                <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
-                    <img
-                        class="rounded-md"
-                        src="./public/images/front-office.webp"
-                        alt="Banner CV Focus Alfasarana"
-                    />
-                </div>
-                <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
-                    <img
-                        class="rounded-md"
-                        src="./public/images/sewing-div.webp"
-                        alt="Banner CV Focus Alfasarana"
-                    />
-                </div>
-                <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
-                    <img
-                        class="rounded-md"
-                        src="./public/images/activity-1.webp"
-                        alt="Banner CV Focus Alfasarana"
-                    />
-                </div>
-                <div class="flex items-center justify-center rounded aspect-video bg-gray-50 dark:bg-gray-800">
-                    <img
-                        class="rounded-md"
-                        src="./public/images/activity-1.webp"
-                        alt="Banner CV Focus Alfasarana"
-                    />
+        <section id="product-us" class="pt-20 dark:bg-gray-900">
+            <div class="py-2 px-4 mx-auto text-center lg:py-4">
+                <MainTitleH2 title={"Produk Kami"} />
+                <div class="pb-4 mx-auto text-center space-y-10 lg:py-8">
+                    {MainCards.map((card) => (
+                        <CardItem card={card} />
+                    ))}
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 
@@ -230,7 +214,7 @@ function CompanyAdvantagesList() {
     return (
         <ul class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 text-left text-gray-500 dark:text-gray-400">
             {CompanyAdvantages.map((companyAdvantage) => (
-                <listItem value={companyAdvantage} />
+                <ListItem value={companyAdvantage} />
             ))}
         </ul>
     );
@@ -400,8 +384,11 @@ function CompanyWorkHour() {
 
 function SectionAboutCompany() {
     return (
-        <div class="py-2 px-4 mx-auto text-center lg:py-4">
-            <MainTitleH2 title={"Alamat Kami"} />
+        <section
+            id="about-company"
+            class="pt-20 pb-2 px-4 mx-auto text-center lg:py-4"
+        >
+            <MainTitleH2 title={"Kantor Kami"} />
 
             <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-8">
                 <ul class="mb-6 md:mb-0 flex flex-col gap-8 justify-evenly">
@@ -410,7 +397,7 @@ function SectionAboutCompany() {
                     <CompanyWorkHour />
                 </ul>
             </div>
-        </div>
+        </section>
     );
 }
 
@@ -432,68 +419,30 @@ function SectionCompanyProfile() {
 
 function AboutCompany() {
     return (
-        <>
+        <section class="pt-20 pb-2 px-4 mx-auto text-center lg:py-4">
             <MainTitleH2 title={"Tentang Kami"} />
             <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
                 <CompanyAdvantagesList />
                 <SectionCompanyProfile />
                 <SectionAboutCompany />
             </div>
-        </>
+        </section>
     );
 }
 
-// function SectionContent({ title, useCard = false, useMap = false }) {
-//     let cardList;
-//     let mapComp;
-
-//     if (useCard) {
-//         cardList = MainCards.map((card) => (
-//             <CardItem key={card.id} card={card} />
-//         ));
-//     }
-
-//     if (useMap) {
-//         mapComp = <ShowGoogleMap />;
-//     }
-
-//     return (
-//         <div class="py-2 px-4 mx-auto text-center lg:py-4">
-//             <MainTitleH2 title={title} />
-
-//             <div class="pb-4 px-4 mx-auto text-center space-y-10 lg:py-8">
-//                 <>{useCard ? cardList : ""}</>
-//                 <>{useMap ? mapComp : ""}</>
-//             </div>
-//         </div>
-//     );
-// }
-
-// function MainContent({ name, useCard = false, useMap = false }) {
-//     return (
-//         <section id="product-us" class="pt-20 dark:bg-gray-900">
-//             <SectionContent title={name} useCard={useCard} useMap={useMap} />
-//         </section>
-//     );
-// }
-
 export default function Homepage() {
     return (
-        <div className="bg-gray-900">
+        <>
             <NavBar navLinks={Links} />
-            <Hero />
 
-            {/* <section id="product-us" class="pt-20 dark:bg-gray-900">
-                <CompanyAdvantagesList />
-                <CompanyWorkImgs />
-                <CompanyProfile />
-            </section> */}
-
-            <div class="py-2 px-4 mx-auto text-center lg:py-4">
+            <main>
+                <Hero />
+                <CompanyProduct />
+                <CompanyMap />
                 <AboutCompany />
-            </div>
+            </main>
 
             <Footer />
-        </div>
+        </>
     );
 }
